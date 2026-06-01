@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background-color: #FDFBF7;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply backdrop-blur-md bg-white/70 border-b border-white/20;
+  }
+
+  .text-gradient-red {
+    @apply bg-gradient-to-r from-damu-red-dark to-damu-red bg-clip-text text-transparent;
+  }
+
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-damu-green-dark to-damu-green bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3.5 bg-gradient-to-r from-damu-red-dark to-damu-red text-white font-semibold 
+           rounded-full shadow-lg shadow-damu-red/25 hover:shadow-damu-red/40 
+           transform hover:-translate-y-0.5 transition-all duration-300 
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3.5 border-2 border-damu-green text-damu-green-dark font-semibold 
+           rounded-full hover:bg-damu-green hover:text-white 
+           transform hover:-translate-y-0.5 transition-all duration-300 
+           active:scale-95;
+  }
+
+  .card-hover {
+    @apply transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+
+  .gradient-radial-red {
+    background: radial-gradient(circle at center, rgba(214, 40, 40, 0.15) 0%, transparent 70%);
+  }
+
+  .gradient-radial-green {
+    background: radial-gradient(circle at center, rgba(64, 145, 108, 0.15) 0%, transparent 70%);
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
